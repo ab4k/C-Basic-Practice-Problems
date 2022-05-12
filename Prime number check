@@ -1,0 +1,31 @@
+#include <stdio.h> 
+
+int main () {
+    
+    long int num;
+    printf("Enter an integer: ");
+    scanf("%ld", &num);
+    
+    int isPrime = 1; // We assume that the entered number is a prime number.
+    
+    //Here we are checking the number entered is prime or not.
+    
+    for (int i = 2; i*i < num; i++) { 
+        if (num % i == 0) {
+            isPrime = 0;
+        }
+    }
+    
+    //Since '1' is neither prime nor composite we print the statement, whenever '1' is entered by the user.
+    
+    if (num == 1) {
+        printf("One is neither prime nor composite number.");
+    } else if (isPrime) {
+        printf("The number %ld is Prime.", num);
+    } else {
+        printf("The number %ld is not Prime.", num);
+    }
+    
+    
+    return 0;
+}
